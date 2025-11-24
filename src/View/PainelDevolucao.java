@@ -1,11 +1,9 @@
 package View;
 
 import Controller.DevolucaoController;
-import Model.Emprestimo;
-import Model.Usuario;
+
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class PainelDevolucao extends JPanel {
@@ -36,22 +34,26 @@ public class PainelDevolucao extends JPanel {
 
         this.setVisible(true);
 
-        btnConfirmar.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    int id = Integer.parseInt(txtIdItem.getText());
-                    controller.realizarDevolucao(id);
-                    txtIdItem.setText(""); // Limpa campo
-                    //frame.setVisible(false);
-                } catch (NumberFormatException ex) {
-                    JOptionPane.showMessageDialog(null, "Digite um número válido.");
-                }
-            }
-        });
+
     }
 
-    public void msg(String mensagem) {
+
+
+    public void addBtnConfirmarListener(ActionListener listener) {
+        this.btnConfirmar.addActionListener(listener);
+    }
+
+    public String gettxtIdItem(){
+        return txtIdItem.getText();
+    }
+
+    public void limparcampoID(){
+        txtIdItem.setText("");
+    }
+
+
+
+    public void msg(String mensagem, String titulo) {
         JOptionPane.showMessageDialog(this, mensagem);
     }
 
