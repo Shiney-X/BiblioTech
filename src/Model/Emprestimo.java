@@ -8,14 +8,14 @@ import java.util.ArrayList;
  */
 public class Emprestimo {
     private int idItem;
-    private String usuario;
+    private Usuario usuario;
     private String itemEmprestado;
     private boolean statusDevolvido; // false = Ativo, true = Finalizado
     private boolean statusAtrasado;
     private LocalDate dataEmprestimo;
     private LocalDate dataDevolucao; // Data PREVISTA para devolução
     // Construtor
-    public Emprestimo(int idItem, String usuario, String itemEmprestado,
+    public Emprestimo(int idItem, Usuario usuario, String itemEmprestado,
                       boolean statusDevolvido, boolean statusAtrasado,
                       LocalDate dataEmprestimo, LocalDate dataDevolucao) {
 
@@ -44,8 +44,8 @@ public class Emprestimo {
     public String getItemEmprestado() { return itemEmprestado; }
     public void setItemEmprestado(String itemEmprestado) { this.itemEmprestado = itemEmprestado; }
 
-    public String getUsuario() { return usuario; }
-    public void setUsuario(String usuario) { this.usuario = usuario; }
+    public Usuario getUsuario() { return usuario; }
+    public void setUsuario(Usuario usuario) { this.usuario = usuario; }
 
     public int getIdItem() { return idItem; }
     public void setIdItem(int idItem) { this.idItem = idItem; }

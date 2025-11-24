@@ -8,12 +8,14 @@ public class Usuario {
     private boolean statusAtivo;
     private boolean statusSuspensoPorMulta;
 
+
     public Usuario(int matricula, LocalDate dataNascimento,
                    boolean statusAtivo, boolean statusSuspensoPorMulta) {
         this.matricula = matricula;
         this.dataNascimento = dataNascimento;
         this.statusAtivo = statusAtivo;
         this.statusSuspensoPorMulta = statusSuspensoPorMulta;
+
     }
 
     public int getMatricula() { return matricula; }
@@ -27,4 +29,6 @@ public class Usuario {
 
     public boolean isStatusSuspensoPorMulta() { return statusSuspensoPorMulta; }
     public void setStatusSuspensoPorMulta(boolean statusSuspensoPorMulta) { this.statusSuspensoPorMulta = statusSuspensoPorMulta; }
+
+
 }

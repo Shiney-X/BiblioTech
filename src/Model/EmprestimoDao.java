@@ -21,7 +21,7 @@ public class EmprestimoDao {
     private LocalDate dataAtual = LocalDate.now();
     private int idItem;
 
-    public void adicionarEmprestimo(String usuario, String itemEmprestado,
+    public void adicionarEmprestimo(Usuario usuario, String itemEmprestado,
                                  boolean statusDevolvido, boolean statusAtrasado,
                                  LocalDate dataEmprestimo, LocalDate dataDevolucao) {
         emprestimos.add(new Emprestimo(proximoId++, usuario, itemEmprestado,
