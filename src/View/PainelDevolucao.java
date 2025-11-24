@@ -48,4 +48,8 @@ public class PainelDevolucao extends JFrame {
             }
         });
     }
+
+    public void msg(String mensagem) {
+        JOptionPane.showMessageDialog(this, mensagem);
+    }
 }

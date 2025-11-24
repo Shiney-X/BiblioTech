@@ -27,4 +27,6 @@ public class Usuario {
 
     public boolean isStatusSuspensoPorMulta() { return statusSuspensoPorMulta; }
     public void setStatusSuspensoPorMulta(boolean statusSuspensoPorMulta) { this.statusSuspensoPorMulta = statusSuspensoPorMulta; }
+
+
 }

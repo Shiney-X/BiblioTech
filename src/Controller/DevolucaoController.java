@@ -14,13 +14,20 @@ import java.time.temporal.ChronoUnit;
 public class DevolucaoController {
     EmprestimoDao model = new EmprestimoDao();
     PainelDevolucao view = new PainelDevolucao();
+
+    //variaveis da função
     int id;
     double valordamulta = 0;
+    int diasAtraso;
+
     private LocalDate dataAtual = LocalDate.now();
     Emprestimo emprestimo= model.buscarPorId(id);
     private EmprestimoController grupo4;
     private ReservaController grupo6;
-    private MultaController grupo7;
+    private MultaController multacontrol;
+
+
+
 
     public void finalizarEmprestimo(int IdItem){
         //bloco if e else pra uma variavel no view se foi confirmado devolução ou não
@@ -35,9 +42,10 @@ public class DevolucaoController {
         } else{
             //função muda status do emprestimo
             emprestimo.setStatusDevolvido(true);
-            Usuario usuario;
-            valordamulta = MultaController.gerarMulta(Usuario usuario, int diasAtraso);
-            JOptionPane.showMessageDialog("Valor da Multa: " + valordamulta + "R$");
+            Usuario usuario = emprestimo.getUsuario();
+            valordamulta = multacontrol.gerarMulta(usuario, diasAtraso);
+            view.msg("Valor da Multa: " + valordamulta + "R$");
         }
     }
+
 }
