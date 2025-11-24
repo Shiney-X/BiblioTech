@@ -39,7 +39,7 @@ public class PainelDevolucao extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 try {
                     int id = Integer.parseInt(txtIdItem.getText());
-                    controller.realizarDevolucao(id);
+                    controller.finalizarEmprestimo(id);
                     txtIdItem.setText(""); // Limpa campo
                     //frame.setVisible(false);
                 } catch (NumberFormatException ex) {
@@ -47,5 +47,9 @@ public class PainelDevolucao extends JFrame {
                 }
             }
         });
+    }
+
+    public void msg(String msg, String titulo){
+        JOptionPane.showMessageDialog(null, msg, titulo);
     }
 }
